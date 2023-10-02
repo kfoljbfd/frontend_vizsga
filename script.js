@@ -7,3 +7,28 @@ const save = document.getElementById("save");
 const tasks_today = document.getElementById("tasks_today");
 const actual = document.getElementById("actual");
 const today = document.getElementById("today");
+
+save.addEventListener("click", function () {
+    const input = actual.value.trim();
+    if (input !== "") {
+        const div = document.createElement("div");
+        div.style.padding = "10px";
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = input;
+        div.appendChild(checkbox);
+
+        const label = document.createElement("label");
+        label.for = input;
+        label.style.padding = "10px";
+        label.innerText = input;
+        div.appendChild(label);
+
+        if (today.checked) {
+            tasks_today.appendChild(div);
+        } else {
+            tasks_tomorrow.appendChild(div);
+        }
+        actual.value = "";
+    }
+});
