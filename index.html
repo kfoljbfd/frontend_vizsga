@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>Task Manager</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box-1">
+                <h2>Add new task</h2>
+                <div class="box-1-flex">
+                    <input
+                        class="box-1-margin"
+                        type="text"
+                        id="actual"
+                        placeholder="Describe task"
+                    />
+                    <div class="box-1-margin box-1-radio">
+                        <input
+                            type="radio"
+                            id="today"
+                            name="taskDate"
+                            checked
+                        />
+                        <label for="today">Today</label>
+                    </div>
+                    <div class="box-1-margin box-1-radio">
+                        <input
+                            type="radio"
+                            id="tomorrow"
+                            name="taskDate"
+                        />
+                        <label for="tomorrow">Tomorrow</label>
+                    </div>
+                    <button class="box-1-margin" id="save">
+                        Save
+                    </button>
+                </div>
+            </div>
+            <div class="task-list">
+                <div class="box-2">
+                    <h2>Tasks for Today</h2>
+                    <div id="tasks_today"></div>
+                </div>
+                <div class="task-buttons">
+                    <button class="task-button" id="toTomorrow">
+                        <i class="fa-solid fa-arrow-right"></i><br />Tomorrow
+                    </button>
+                    <button class="task-button" id="toYesterday">
+                        <i class="fa-solid fa-arrow-left"></i><br />Today
+                    </button>
+                    <button class="task-button" id="remove">
+                        <i class="fa-solid fa-trash"></i><br />Delete
+                    </button>
+                </div>
+                <div class="box-3">
+                    <h2>Tasks for Tomorrow</h2>
+                    <div id="tasks_tomorrow"></div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
