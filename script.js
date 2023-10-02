@@ -32,3 +32,12 @@ save.addEventListener("click", function () {
         actual.value = "";
     }
 });
+
+toTomorrow.addEventListener("click", function () {
+    const checked = tasks_today.querySelectorAll("input:checked");
+    checked.forEach((task) => {
+        const div = task.parentNode;
+        task.checked = false;
+        tasks_tomorrow.appendChild(div);
+    });
+});
