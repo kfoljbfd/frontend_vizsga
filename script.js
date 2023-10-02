@@ -50,3 +50,14 @@ toYesterday.addEventListener("click", function () {
         tasks_today.appendChild(div);
     });
 });
+
+remove.addEventListener("click", function () {
+    const checked_Today = tasks_today.querySelectorAll("input:checked");
+    const checked_Tomorrow = tasks_tomorrow.querySelectorAll("input:checked");
+    checked_Today.forEach((task) => {
+        task.parentNode.remove();
+    });
+    checked_Tomorrow.forEach((task) => {
+        task.parentNode.remove();
+    });
+});
