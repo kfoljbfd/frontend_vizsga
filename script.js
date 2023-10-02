@@ -41,3 +41,12 @@ toTomorrow.addEventListener("click", function () {
         tasks_tomorrow.appendChild(div);
     });
 });
+
+toYesterday.addEventListener("click", function () {
+    const checked = tasks_tomorrow.querySelectorAll("input:checked");
+    checked.forEach((task) => {
+        const div = task.parentNode;
+        task.checked = false;
+        tasks_today.appendChild(div);
+    });
+});
